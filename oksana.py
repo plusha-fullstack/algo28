@@ -1,4 +1,4 @@
-def odometr(arr):
+def odometer(arr):
     hours = arr[1::2]
     speed = arr[::2]
     print(hours)
