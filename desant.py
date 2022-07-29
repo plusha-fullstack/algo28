@@ -8,6 +8,12 @@ def ConquestCampaign(N, M, L, battalion):
     days_of_war = 1
     number_of_elements = N*M
     war = True
+    summ=0
+    for i in range(N):
+        for j in range(M):
+            summ+=battlefield[i][j]
+    if summ == number_of_elements:
+            return 1
     
     while war:
     
@@ -69,3 +75,4 @@ def ConquestCampaign(N, M, L, battalion):
             war = False
     
     return days_of_war
+    
