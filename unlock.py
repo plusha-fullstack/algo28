@@ -1,6 +1,6 @@
 def PatternUnlock(N, hits):
     secret_key = 0
-    for i in range(1,N+1):
+    for i in range(1,len(hits)):
         if hits[i] == 6:
             if hits[i-1] == 5:
                 secret_key+=1
