@@ -15,7 +15,7 @@ def WordSearch(length, s, subs):
     arr = clean_str.split()    
     temp_str = ''
     for i in range(len(arr)):
-        if (len(temp_str)<length) and (len(temp_str) + len(arr[i])) < length:
+        if (len(temp_str)<=length) and (len(temp_str) + len(arr[i])) <= length:
             temp_str += arr[i]
             temp_str+=' '
         else:
