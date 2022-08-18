@@ -29,17 +29,12 @@ def TheRabbitsFoot(s, encode):
         matrix = s.split()
         for i in range(len(matrix)):
             matrix[i] = list(matrix[i])
+            
+    print(len(matrix))
+    print(len(matrix[1]))
     
     
-    for row in matrix:            # делаем перебор всех строк матрицы A
-        for elem in row:     # перебираем все элементы в строке row
-            print(elem, end = ' ')
-        print()
-        
-     for row in matrix:            # делаем перебор всех строк матрицы A
-        for elem in row:     # перебираем все элементы в строке row
-            print(elem, end = ' ')
-        print()
+    print(matrix)
     #generate string
     res_str = ''
     if encode:
@@ -49,10 +44,12 @@ def TheRabbitsFoot(s, encode):
                     res_str+=matrix[j][i]
             res_str+=' '
     if encode == False:
-        for i in range(N):
-            for j in range(M):
-                if matrix[i][j]!='0':
-                    res_str+=matrix[i][j]
+        for i in range(len(matrix)):
+            for j in range(len(matrix[i])):
+                try:
+                    res_str += matrix[j][i]
+                except IndexError:
+                    pass
         
     
     return res_str
