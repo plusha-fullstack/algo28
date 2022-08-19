@@ -44,6 +44,7 @@ def TheRabbitsFoot(s, encode):
                     res_str += matrix[j][i]
                 except IndexError:
                     pass
-        
     
+  
+    res_str = res_str.strip()
     return res_str
