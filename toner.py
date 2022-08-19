@@ -21,7 +21,9 @@ def PrintingCosts(Line):
     }
     res = 0
     for i in Line:
-        res += dictionary[i]
+        try:
+            res += dictionary[i]
+        except KeyError:
+            res += 23
         
     return res
-        
