@@ -8,8 +8,8 @@ def TheRabbitsFoot(s, encode):
         N+=1
     N,M = int(N), int(M)
     
-    matrix =  [ ['0']*M for i in range(N) ] #N - stroki M - stolb
-    #add elems to matrix
+    matrix =  [ ['0']*M for i in range(N) ]
+    
     if encode == True:
         len_of_str = len(s)
         k = 0
@@ -30,12 +30,6 @@ def TheRabbitsFoot(s, encode):
         for i in range(len(matrix)):
             matrix[i] = list(matrix[i])
             
-    print(len(matrix))
-    print(len(matrix[1]))
-    
-    
-    print(matrix)
-    #generate string
     res_str = ''
     if encode:
         for i in range(N):
@@ -45,7 +39,7 @@ def TheRabbitsFoot(s, encode):
             res_str+=' '
     if encode == False:
         for i in range(len(matrix)):
-            for j in range(len(matrix[i])):
+            for j in range(len(matrix[i])+1):
                 try:
                     res_str += matrix[j][i]
                 except IndexError:
@@ -53,10 +47,3 @@ def TheRabbitsFoot(s, encode):
         
     
     return res_str
-        
-                
-                
-    
-    
-#print(TheRabbitsFoot('отдай мою кроличью лапку',True))# омоюу толл дюиа акчп йрьк
-print(TheRabbitsFoot('омоюу толл дюиа акчп йрьк',False))#отдаймоюкроличьюлапку
