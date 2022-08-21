@@ -24,4 +24,6 @@ def BigMinus(s1, s2):
             res_str = str(temp1 - temp2) + res_str
             
     res_str = res_str.lstrip('0')
+    if res_str =='':
+        return '0'
     return res_str
