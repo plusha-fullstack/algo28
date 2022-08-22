@@ -1,8 +1,7 @@
 def UFO(N, data, octal):
+    base = 16
     if octal:
         base = 8
-    else:
-        base = 16
     for i in range(len(data)):
         new_i = 0
         digit = 0
