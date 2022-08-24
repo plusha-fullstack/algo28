@@ -13,8 +13,8 @@ def Unmanned(L, N, track):
             res += clear_track[i][0] - clear_track[i - 1][0]
         else:
             res += clear_track[i][0]
-        if (res // clear_track[i][1]) % 2 == 0:
-            res += clear_track[i][1] - (res % clear_track[i][1])
+        if res % (clear_track[i][1] + clear_track[i][2]) < clear_track[i][1]:
+            res += clear_track[i][1] - (res % (clear_track[i][1] + clear_track[i][2]))
     
     
     res += (L - clear_track[-1][0])
