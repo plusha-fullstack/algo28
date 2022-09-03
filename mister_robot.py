@@ -1,9 +1,7 @@
 def can_be_sorted(a,b,c):
     li_st = [a,b,c]
     order_list = sorted(li_st)
-    if order_list == [c,a,b] or order_list == [b,c,a]:
-        return True
-    return False
+    return (order_list == [c,a,b] or order_list == [b,c,a])
 
 
 def MisterRobot(N, data):
@@ -15,6 +13,5 @@ def MisterRobot(N, data):
                 flag = True
                 data[i:i + 3] = sorted(data[i:i + 3])
         
-    if data == sorted(data):
-        return True
-    return False
+
+    return data == sorted(data)
