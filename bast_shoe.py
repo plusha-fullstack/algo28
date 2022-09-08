@@ -10,7 +10,9 @@ def BastShoe(command):
         return current_str
     if operation == '1':
         if where_i_am < len(list_of_instances) - 1:
-            list_of_instances = list_of_instances[:where_i_am + 1]
+            list_of_instances[0] = list_of_instances[where_i_am]
+            list_of_instances = list_of_instances[:1]
+            where_i_am = 0
         current_str += command[2:]
         list_of_instances.append(current_str)
         where_i_am += 1
@@ -20,7 +22,9 @@ def BastShoe(command):
         if not command[2:].isnumeric():
             return current_str
         if where_i_am < len(list_of_instances) - 1:
-            list_of_instances = list_of_instances[:where_i_am + 1]
+            list_of_instances[0] = list_of_instances[where_i_am]
+            list_of_instances = list_of_instances[:1]
+            where_i_am = 0
         n = int(command[2:])
         if n > len(current_str):
             current_str = ''
@@ -50,5 +54,5 @@ def BastShoe(command):
     if operation == '5':
         if where_i_am < len(list_of_instances) - 1:
             current_str = list_of_instances[where_i_am + 1]
-            where_i_am +=1
+            where_i_am += 1
         return current_str
