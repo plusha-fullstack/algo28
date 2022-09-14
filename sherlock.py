@@ -30,15 +30,13 @@ def SherlockValidString(s):
     for i in s:
         if i in dic:
             dic[i] += 1
-    max_number = 0
+
     min_number = 1000
     count_of_mins = 0
-    count_of_maxs = 0
     count_of_1 = 0
-    
+
+
     for k, v in dic.items():
-        #print(k)
-        #print(dic[k])
         if dic[k] > 0:
             if dic[k] == min_number:
                 count_of_mins += 1
@@ -47,32 +45,31 @@ def SherlockValidString(s):
                 count_of_mins = 1
             if dic[k] == 1:
                 count_of_1 += 1
-    
-    
-    #if min_number == 1:
-        
+
+    if count_of_1 == 1:
+        min_number = 1000;
+        for k, v in dic.items():
+            if dic[k] == 1:
+                dic[k] = 0;
+
+            if dic[k] > 0:
+                if dic[k] == min_number:
+                   count_of_mins += 1
+                elif dic[k] < min_number:
+                    min_number = dic[k]
+                    count_of_mins = 1
+                    
     another_elems = 0
     difference = 0
     for k, v in dic.items():
         if dic[k] > min_number:
             another_elems += 1
             difference = dic[k] - min_number
-            
-    
-    if another_elems < 2 and difference < 2 :
-        print('True')
+
+    if another_elems == 0 and difference == 0 and count_of_1 == 1:
+        return True
     else:
-        print('False')
-            
-    #print(max_number,count_of_maxs,min_number,count_of_mins)
+        if another_elems < 2 and difference < 2 and count_of_1 !=1:
+            return True
     
-    
-        
-        
-    
-SherlockValidString('xyz')
-SherlockValidString('xyzaa')
-SherlockValidString('xyyzz')
-SherlockValidString('xyzzz')
-SherlockValidString('xxyyza')
-SherlockValidString('xxyyzabc')
+    return False
