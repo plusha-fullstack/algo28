@@ -2,7 +2,7 @@ def rost(H,W,tree):
     for i in range(H):
         for j in range(W):
             tree[i][j] += 1
-                    
+                   
     return tree
 
 def withering(H,W,tree):
@@ -18,7 +18,7 @@ def withering(H,W,tree):
             except IndexError:
                 pass
             try:
-                if tree[i - 1][j] > 2 and tree[i][j] < 3:
+                if tree[i - 1][j] > 2 and tree[i][j] < 3 and i > 0:
                     tree[i][j] = 0
                     continue
             except IndexError:
@@ -30,7 +30,7 @@ def withering(H,W,tree):
             except IndexError:
                 pass
             try:
-                if tree[i][j - 1] > 2 and tree[i][j] < 3:
+                if tree[i][j - 1] > 2 and tree[i][j] < 3 and j > 0:
                     tree[i][j] = 0
                     continue
             except IndexError:
@@ -60,14 +60,14 @@ def TreeOfLife(H, W, N, tree):
             tree = rost(H,W,tree)
         else:
             tree = withering(H,W,tree)
-        
     for i in range(H):
         for j in range(W):
             if tree[i][j] > 0:
                 tree[i][j] = '+'
             else:
                 tree[i][j] = '.'
-                
+               
     for i in range(len(tree)):
         tree[i] = ''.join(tree[i])
+        
     return tree
