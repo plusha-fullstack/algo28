@@ -22,4 +22,3 @@ def MatrixTurn(matrix, M, N, T):
         T -= 1
     for i in range(len(matrix)):
         matrix[i] = ''.join(matrix[i])
-    print(matrix)
