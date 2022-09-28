@@ -20,4 +20,6 @@ def MatrixTurn(matrix, M, N, T):
                 matrix[k1][k2], matrix[k1][k2 - 1] = matrix[k1][k2 - 1], matrix[k1][k2]
                 k2 -= 1
         T -= 1
-    
+    for i in range(len(matrix)):
+        matrix[i] = ''.join(matrix[i])
+    print(matrix)
