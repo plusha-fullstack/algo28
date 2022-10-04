@@ -10,17 +10,14 @@ def emenies_detection(village,left,right):
     return count == 3        
 def white_walkers(village):
     left,right = 0,0
+    flag = False
     for i in range(len(village)):
         if village[i].isdigit():
             left = i
             right = look_right(village, i)
-            if int(village[left]) + int(village[right]) == 10:
+            if right != None and int(village[left]) + int(village[right]) == 10:
                 if not emenies_detection(village,left,right):
                     return False
-            left = right
-    return True
-#print(white_walkers("axxb6===4xaf5===eee5"))
-print(white_walkers("5==ooooooo=5=5"))
-print(white_walkers("axxb6===4xaf5===eee5"))
-print(white_walkers("axxb6===4xaf5===eee5"))
-print(white_walkers("axxb6===4xaf5===eee5"))
+                else:
+                    flag = True
+    return flag
