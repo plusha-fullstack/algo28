@@ -1,7 +1,7 @@
 def first_way(F):
     sorted_array = sorted(F)
     for i in range(len(F)):
-        for j in range(len(F)):
+        for j in range(i + 1,len(F)):
             F[i], F[j] = F[j] , F[i]
             if F == sorted_array:
                 return True
